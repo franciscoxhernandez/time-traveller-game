@@ -1,7 +1,10 @@
 import requests
 import re
 from bs4 import BeautifulSoup
-from categories import CATEGORY_TITLES
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from game.categories import CATEGORY_TITLES
 
 WIKI_BASE_URL = "https://en.wikipedia.org"
 
