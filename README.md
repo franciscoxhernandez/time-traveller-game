@@ -61,7 +61,7 @@ Perfect for history buffs, trivia fans, or anyone who loves a challenge!
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/your-username/time-traveller-game.git
+git clone https://github.com/franciscoxhernandez/time-traveller-game.git
 cd time-traveller-game
 pip install -r requirements.txt
 python game/main.py
