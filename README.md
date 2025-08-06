@@ -51,10 +51,11 @@ Perfect for history buffs, trivia fans, or anyone who loves a challenge!
 ---
 
 ## Made with ❤️ by:
-- Christin - https://github.com/chrissy-tech
+
+- [**Christin**](https://github.com/chrissy-tech)
 - Constantin - 
 - Sandra  - 
-- Greg - https://github.com/gregorydearing 
+- [**Greg**](https://github.com/gregorydearing)  
 
 ---
 
