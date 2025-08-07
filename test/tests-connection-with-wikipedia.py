@@ -10,6 +10,7 @@ WIKI_BASE_URL = "https://en.wikipedia.org"
 
 
 def fetch_wiki_page(url): # safe way to download a Wikipedia page as HTML text.
+    """Download a Wikipedia page as HTML text."""
     try:
         response = requests.get(url, timeout=7) # Tries to send an HTTP GET request to the given url. timeout=7 means: if the server doesn’t respond in 7 seconds, stop waiting
         response.raise_for_status() # Checks if the request was successful, if the server returns an error this line will raise an exception
