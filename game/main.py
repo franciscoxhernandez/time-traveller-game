@@ -11,6 +11,7 @@ categories = ["history", "famous_people", "sports", "music_releases", "movies", 
 score_counter = 0
 
 def welcome():
+    """Display welcome screen."""
     messages = [
         "",
         "",
@@ -38,17 +39,22 @@ def welcome():
 
 
 def rules_and_scores_of_the_game():
-    #print("\n--- Welcome to the Time Traveler Wiki Game! ---")
+    """Display the game description and rules"""
     print()
     print(Fore.BLACK + Back.LIGHTBLUE_EX + "-----------------------GAME DESCRIPTION-----------------------------")
     print("Guess the year associated with key facts pulled live from Wikipedia!")
     print()
-    print("Think you know history? Put your knowledge to the test in Guess the Year! \nIn this fun and educational game, you're given a famous event — your challenge \nis to guess the year it happened. Get instant feedback after each guess: \nwere you too early, too late, or spot on? \nLearn new facts, improve your memory, and compete for the highest score. \nPerfect for history buffs, \ntrivia fans, or anyone who loves a challenge!")
+    print("Think you know history? Put your knowledge to the test in Guess the Year! \nIn this fun and educational game,"
+          " you're given a famous event — your challenge \nis to guess the year it happened. Get instant feedback after "
+          "each guess: \nwere you too early, too late, or spot on? \nLearn new facts, improve your memory, and compete "
+          "for the highest score. \nPerfect for history buffs, \ntrivia fans, or anyone who loves a challenge!")
     print()
     input("Press Enter to continue...")
     print()
     print(Fore.BLACK + Back.LIGHTBLUE_EX + "-----------------------GAME RULES:-----------------------------")
-    print("-Choose the number of rounds (1 to 3)\n-Each player  selects a category: sports, history, famous people, music releases, movies and random \n-The player receives a question and must guess the year.\n-The system provides a Wikipedia article with the correct answer")
+    print("-Choose the number of rounds (1 to 3)\n-Each player  selects a category: sports, history, famous people, "
+          "music releases, movies and random \n-The player receives a question and must guess the year.\n-The system "
+          "provides a Wikipedia article with the correct answer")
     print()
     print("\nHINT:Input must be a full year (e.g., 1945), or negative for BC (e.g., -753).")
     print()
@@ -64,6 +70,7 @@ def rules_and_scores_of_the_game():
     print()
 
 def number_and_name_of_players():
+    """Ask the user how many players are going to play and their names"""
     try:
         num_player = int(input(Fore.LIGHTBLUE_EX +"How many players would you like to play? (1 to 3) "))
         print()
@@ -83,6 +90,7 @@ def number_and_name_of_players():
         return number_and_name_of_players()
 
 def get_number_of_rounds():
+    """Ask the user to enter the number of rounds"""
     try:
         rounds = int(input(Fore.LIGHTBLUE_EX +"How many rounds would you like to play? (between 1-3): "))
         print()
@@ -96,6 +104,7 @@ def get_number_of_rounds():
 
 
 def get_topic_from_user():
+    """Ask the user to select one topic the topic"""
     while True:
         print("\n1. History\n2. Famous People\n3. Sports\n4. Music Releases\n5. Movies\n6. Random\n")
         topic = input(Fore.LIGHTBLUE_EX + "Which topic do you want the quiz to be about? (1-6) " )
@@ -162,9 +171,8 @@ def generate_question_from_infobox(title):
 
     return question, year
 
-
-
 def get_user_guess():
+    """Ask the user to guess the question"""
     try:
         user_guess = int(input(Fore.LIGHTYELLOW_EX +"Please enter your guess: "))
         return user_guess
@@ -172,11 +180,12 @@ def get_user_guess():
         print(Fore.LIGHTYELLOW_EX + "Please enter a number.")
         return get_user_guess()
 
-
 def calculate_difference(user_guess, year):
+    """Calculate the difference between the user's guess and the year"""
     return abs(user_guess - year)
 
 def calculate_points(difference):
+    """Calculate the amount of points"""
     if difference == 0:
         print("🧠-BIG BRAIN MODE (EXACT GUESS: 100 POINTS)")
         return 100
@@ -191,6 +200,7 @@ def calculate_points(difference):
         return 0
 
 def show_winner(player_scores):
+    """Display the winner"""
     highest_score = max(player_scores.values())
     best_player = max(player_scores, key = player_scores.get)
 
@@ -205,6 +215,7 @@ def show_winner(player_scores):
         print(f"{names} tied with {highest_score} points!\n")
 
 def play_again_or_quit():
+    """Ask the user to play again or quit the game"""
     again_or_quit = input("Press 'A' to play again or 'Q' to quit...")
     if again_or_quit.lower() != "a" and again_or_quit.lower() != "q":
         print("Please enter either 'A' or 'Q'.\n")
@@ -224,7 +235,6 @@ def main():
     player_scores = {}
     for player in list_of_players:
         player_scores[player] = 0
-
 
     for player in range(len(list_of_players)):
         player_name = list_of_players[player]
@@ -255,7 +265,6 @@ def main():
 
     show_winner(player_scores)
     play_again_or_quit()
-
 
 if __name__ == "__main__":
     main()
