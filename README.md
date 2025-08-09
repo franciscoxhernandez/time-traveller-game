@@ -53,7 +53,7 @@ Perfect for history buffs, trivia fans, or anyone who loves a challenge!
 ## Made with ❤️ by:
 
 - [**Christin**](https://github.com/chrissy-tech)
-- Constantin - 
+- [**Constantin**](https://github.com/ck-code-98)  
 - Sandra  - 
 - [**Greg**](https://github.com/gregorydearing)  
 
